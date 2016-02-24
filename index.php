@@ -8,12 +8,12 @@ https://github.com/saymtf/LIHTC.git
   
 <!DOCTYPE html>
 <html>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <title>CST-499</title>
+		<title>CST-499</title>
 </head>
   
 <script>
@@ -21,7 +21,7 @@ https://github.com/saymtf/LIHTC.git
     		<!-- Change Location -->
   			var myLatLng = {lat: -25.363, lng: 131.044};
 	
-  			var map = new google.maps.Map(document.getElementById('map'), {
+  			var map = new google.maps.Map(document.getElementById('google_maps'), {
     				zoom: 4,
     				center: myLatLng
   			});
@@ -36,7 +36,7 @@ https://github.com/saymtf/LIHTC.git
   
 <body>
 	<div id="wrapper">
-     
+     <div id="sp"></div>
      <!-- Display First -->
      <div id="images">
        
@@ -60,7 +60,5 @@ https://github.com/saymtf/LIHTC.git
             
   </div>
 </body>
-  <script>
-  		$('#images').blur()
-  </script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&signed_in=true&callback=initMap"></script>
 </html>
