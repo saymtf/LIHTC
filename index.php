@@ -9,11 +9,10 @@ https://github.com/saymtf/LIHTC.git
 <!DOCTYPE html>
 <html>
 
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<title>CST-499</title>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<title>CST-499</title>
 </head>
   
 <script>
@@ -60,5 +59,8 @@ https://github.com/saymtf/LIHTC.git
             
   </div>
 </body>
+ <script>
+ 		$('#images').hide()   
+ </script>
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&signed_in=true&callback=initMap"></script>
 </html>
