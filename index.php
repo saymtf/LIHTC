@@ -8,59 +8,75 @@ https://github.com/saymtf/LIHTC.git
   
 <!DOCTYPE html>
 <html>
-
-<head>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="initial-scale=1.0">
+    <!-- Import Jq, Google API, Font-Awesome -->  
+	  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	  <script src="https://maps.googleapis.com/maps/api/js"></script>
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<title>CST-499</title>
-</head>
-  
-<script>
-    function initMap() {
-    		<!-- Change Location -->
-  			var myLatLng = {lat: -25.363, lng: 131.044};
-	
-  			var map = new google.maps.Map(document.getElementById('google_maps'), {
-    				zoom: 4,
-    				center: myLatLng
-  			});
+	  
+	  <title>LIHTC</title>
+	  
+	  <script>
+      function initMap() {
+        document.getElementById("demo").innerHTML = "Maps World";
+        var myLatLng = {lat: -25.363, lng: 131.044};
 
-  			var marker = new google.maps.Marker({
-    			position: myLatLng,
-    			map: map,
-    			title: 'Hello World!'
-  			});
-		}
-</script>
-  
-<body>
-	<div id="wrapper">
-     <div id="sp"></div>
-     <!-- Display First -->
-     <div id="images">
-       
-     		<div id="home">
-      		<i class="fa fa-home fa-5x"></i>
-     		</div>  
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+	  
+	  <style> 
+	    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
       
-      	<div id="building">
-      		<i class="fa fa-building-o fa-5x"></i>
-     		</div>  
-            
+      #map { 
+        height: 100%; 
+      } 
+    </style>
+	  
+  </head>
+  <body>
+  
+  
+   <!-- <div id="wrapper"> -->
+	    <a href="/map.html">asdf</a>
+      <p id="demo"></p>
+     
+      <div id="sp"></div>
+     
+       <!-- Display First -->
+      <div id="images">
+        <div id="find_home"><i class="fa fa-home fa-5x"></i></div>  
+        <div id="find_project"><i class="fa fa-building-o fa-5x"></i></div>  
       </div>
             
-      <!-- Text Fields -->
-      <div id="text_fields">
-		</div>        
+      <!-- Display Text Fields -->
+      <div id="text_fields"></div>        
       
       <!-- Display Map -->
-      <div id="google_maps">
-      </div>
+      <div id="map"></div>
+    
             
-  </div>
-</body>
- <script>
- 		$('#images').hide()   
- </script>
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&signed_in=true&callback=initMap"></script>
+    <!-- </div><!-- EOF Wrapper -->
+  </body>
+
+  <script> document.getElementById("demo").innerHTML = "Hello World!"; </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&callback=initMap"
+    async defer></script>   
+  
+ 
 </html>
