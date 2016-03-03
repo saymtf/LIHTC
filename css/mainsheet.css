@@ -1,0 +1,19 @@
+body {
+    background-color: #33CCFF;
+    -webkit-animation-name: bg; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+    animation-name: bg;
+    animation-duration: 10s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes bg {
+    from {opacity: 0;}
+    to {opacity: 100;}
+}
+
+/* Standard syntax */
+@keyframes bg {
+    from {opacity: 0;}
+    to {opacity: 100;}
+}

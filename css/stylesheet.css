@@ -1,0 +1,13 @@
+#wrapper {
+	border:none;
+	border-style:solid;
+	border-radius: 8px;
+	/*background:#CC00FF;
+	width:856px;*/
+	margin:auto;
+}
+
+#images {
+	margin: 0 auto;
+}
+
