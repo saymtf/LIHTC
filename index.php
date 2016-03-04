@@ -18,7 +18,7 @@ https://github.com/saymtf/LIHTC.git
   	<script type="text/javascript" src="js/maps.js"></script>
   	
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	  <link rel="stylesheet" href="css/stylesheet.css">
+	  <link rel="stylesheet" href="css/styles.css">
 	  <link rel="stylesheet" href="css/mainsheet.css">
 	 
 	  <title>LIHTC</title>
@@ -26,7 +26,8 @@ https://github.com/saymtf/LIHTC.git
     
     <script>
 	  function find_home() {
-      document.getElementById('map').style.visibility = 'visible';
+	    document.getElementById("text").name = "asdf";
+     /* document.getElementById('map').style.visibility = 'visible'; */
     }
     
     
@@ -38,25 +39,35 @@ https://github.com/saymtf/LIHTC.git
   </head>
   <body>
     <div id="wrapper">
-     
-       <!-- Display First -->
-      <div id="images">
-        <div id="find_home"><i class="fa fa-home fa-5x"></i></div>  
-        <div id="find_project"><i class="fa fa-building-o fa-5x"></i></div>  
+      <div id=header>
+        <p id="text">header</p>
       </div>
-            
-      <div id="footer"><a href="#">About Us</a></div>
+      
+       <!-- Main Display (Two Images) -->
+      <div class="mainbody">
+        <span data-title="Find Housing"><a href="#house" class="fa fa-home fa-5x"></a></span>
+        <span data-title="Build Project Housing"><a href="#project" class="fa fa-building-o fa-5x"></a></span>
+      </div>
+      
+      <div class="text_field">
+      <!-- Projects -->
+      <div id="project">
+        PROJECTS
+      </div>    
+  
+      <!-- Homes -->
+      <div id="house">
+        HOMES
+      </div>
+    </div>
+      
+        
+      <div id="footer">
+        <a href="#">About Us</a>
+      </div>
     </div><!-- EOF Wrapper -->
   </body>
 
-  <script> 
-  
-      document.getElementById("find_project").addEventListener("find_project", myFunction);
-      document.getElementById("find_home").addEventListener("find_home", myFunction);
-      
-      inputFields("find_home");
-      
-  </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&callback=initMap"
     async defer></script>   
   
