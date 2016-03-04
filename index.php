@@ -52,12 +52,12 @@ https://github.com/saymtf/LIHTC.git
       <div class="text_field">
       <!-- Projects -->
       <div id="project">
-        PROJECTS
+       
       </div>    
   
       <!-- Homes -->
       <div id="house">
-        HOMES
+        
       </div>
     </div>
       

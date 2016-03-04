@@ -14,24 +14,9 @@
     transform: translate(-50%, -50%); 
 }
 
-/* unvisited link */
-a:link {
-    color: red;
-}
-
-/* visited link */
-a:visited {
-    color: green;
-}
-
-/* mouse over link */
-a:hover {
-    color: hotpink;
-}
-
-/* selected link */
-a:active {
-    color: blue;
+a:link, a:visited, a:hover, a:active   {
+    color: #000;
+    text-decoration: none;
 }
 
 input, button, submit { border:none; } 
