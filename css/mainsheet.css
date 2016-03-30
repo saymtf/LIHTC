@@ -1,5 +1,5 @@
 body {
-    background-color: #33CCFF;
+    /*background-color: #33CCFF;*/
     -webkit-animation-name: bg; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 6s; /* Chrome, Safari, Opera */
     animation-name: bg;
@@ -85,13 +85,13 @@ div.mainbody {
 	transition:opacity 0.4s;
 }
 
-.mainbody span:hover::before{
+.mainbody span:hover::before {
 	opacity:1;
 }
 
-
-div:target {
+div:target  {
 	opacity: 1;
 	color:red;
     font-size:40px
 }
+
