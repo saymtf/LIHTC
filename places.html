@@ -108,7 +108,7 @@
         var request = {
         location: place,
         radius: '1000',
-        types: ['restaurant']};
+        types: ['restaurant','hospital','grocery_or_supermarket','school','store','university','airport']};
         var marker = new google.maps.Marker({map: map,position: details.geometry.location});
         
         service = new google.maps.places.PlacesService(map);

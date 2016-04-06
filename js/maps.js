@@ -1,12 +1,4 @@
 var map;
-function initMap() {
-  
-  map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: 37.773972, lng: -122.431297},
-  zoom: 15
-  });
-  
-}
 
 /*** Update Map **/
 function updateMap(latitude, longitude, markerCount, addressTitle, arrayForMarkers) {
@@ -38,3 +30,4 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
+

@@ -25,7 +25,7 @@ https://github.com/saymtf/LIHTC.git
   	<link rel="shortcut icon" href="images/favicon.ico" /> 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
-	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	<!-- <link rel="stylesheet" href="css/mainsheet.css" /> -->
 	
 	<title>LIHTC</title>
@@ -46,11 +46,11 @@ https://github.com/saymtf/LIHTC.git
 		            <div class="bl-content">
 		            	<!-- Address Fields -->
                         <div class="address_fields">
-					        <h1 class="content-title">Find Your Project Home(s) Below</h1>
+					        <h1 class="content-title">Enter Your Project Location(s) Below</h1>
 					        
 					        	<h5 id="project-instruction">Click For Instructions</h5>
 					        	<div id="instructions">
-					        		<p>&nbsp;&nbsp;&nbsp;&nbsp; Type your address below then click 'Add Address' (After Adding an address, 'Remove Address' will appear. It will remove the latest address inserted).</p>
+					        		<p>&nbsp;&nbsp;&nbsp;&nbsp; Type your address below then click 'Add Address'. (After Adding an address, 'Remove Address' will appear. It will remove the latest address inserted).</p>
 					        		<p>&nbsp;&nbsp;&nbsp;&nbsp; You are allowed to have up to 4 addresses. After adding a new Address, a marker will appear to show you the location of where that home is!</p>
                             	</div>
                             <input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" required />
@@ -63,7 +63,7 @@ https://github.com/saymtf/LIHTC.git
                                 <li id="input3"></li>
                                 <li id="input4"></li>
                             </ol> 
-                            <ul id="bl-work-items"><li data-panel="panel-1" id="submit"><a href="#">Submit</a></li></ul>
+                            <ul id="bl-work-items"><li data-panel="panel-1" id="submit-projects"><a id="submit-to-panel" href="#">Submit</a></li></ul>
 					    </div>
 					    <!-- EOF Address Fields -->
 					    
@@ -81,10 +81,12 @@ https://github.com/saymtf/LIHTC.git
 					</div>
 					<div class="bl-content">
 						<h1 class="content-title">Fill In The Form To Find A Perfect Affordable Home</h1> 
-						State <input type="text" id="address-text" placeholder="CA" required />
-						City <input type="text" id="address-text" placeholder="San Francisco" required />
-						Annual Income <input type="text" id="address-text" placeholder="23000" required />
-						<input type="submit" />
+						<ul id="home-input-fields">
+							<li>State <input type="text" id="state-field" placeholder="CA" required /></li>
+							<li>City <input type="text" id="city-field" placeholder="San Francisco" required /></li>
+							<li>Annual Income <input type="text" id="annual-field" placeholder="23000" required /></li>
+						</ul>
+						<ul id="bl-work-items"><li data-panel="panel-5" id="submit-homes"><a id="submit-to-panel" href="#">Submit</a></li></ul>
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -114,47 +116,34 @@ https://github.com/saymtf/LIHTC.git
 					<div data-panel="panel-1">
 						<div>
 							<img src="images/1.jpg" />
-							<h3>TESTESTETST</h3>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
-						</div>
-					</div>
+							<h3>Panel 1</h3>
+					
+    					</div>
+    				</div>	
 					<div data-panel="panel-2">
 						<div>
 							<img src="images/1.jpg" />
-							<h3>TESTESTETST</h3>
+							<h3>Panel 2</h3>
 							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
 						</div>
 					</div>
 					<div data-panel="panel-3">
 						<div>
 							<img src="images/1.jpg" />
-							<h3>TESTESTETST</h3>
+							<h3>Panel 3</h3>
 							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
 						</div>
 					</div>
 					<div data-panel="panel-4">
 						<div>
 							<img src="images/1.jpg" />
-							<h3>TESTESTETST</h3>
+							<h3>PANEL 4</h3>
 							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
+						</div>
+					</div>
+					<div data-panel="panel-5">
+						<div>
+							<h3>PANEL 5 -- FINDING A HOME</h3>
 						</div>
 					</div>
 					<nav>
@@ -188,8 +177,9 @@ https://github.com/saymtf/LIHTC.git
                     var inputs = "#input".concat(i.toString());   
                     $(inputs).hide();
                 }
+                $("#map").css("display", "none");
                 $("#hide").css("display", "none");
-                $("#submit").css("display", "none");
+                $("#submit-projects").css("display", "none");
                 
                 
 		        $("#show").click(function() {
@@ -204,7 +194,8 @@ https://github.com/saymtf/LIHTC.git
                         document.getElementById(anInput).innerHTML = address;
                         anInput = "#".concat(anInput); 
 		                $(anInput).show();
-		                $("#submit").show();
+		                $("#submit-projects").show();
+		                $("#map").show();
 		                
 		            }
 		            
@@ -228,7 +219,7 @@ https://github.com/saymtf/LIHTC.git
 		            
 		            // Hide/Show ElementId Button (Put as a function)
 		            if(count > 0) {  $("#hide").css("display", "inline"); }
-		            else { $("#hide").css("display", "none");  $("#submit").hide(); }
+		            else { $("#hide").css("display", "none");  $("#submit-projects").hide(); $("#map").hide(); }
 		            if(count < 4) {  $("#show").css("display", "inline"); }
 		            else {   $("#show").css("display", "none"); }
 		        });
@@ -239,10 +230,20 @@ https://github.com/saymtf/LIHTC.git
 	
 	</body>
 	
+	<script>
+		$("#submit-projects").click(function() {
+			var $panelName = "panel-".concat(count);
+			alert($panelName);
+			$("li").data("panel", $panelName);
+		});
+	</script>
+	
 	<!-- FIND WHERE TO MOVE THIS -->
   	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&callback=initMap"
-    async defer></script>   
+  	 async defer></script>   
   	
+  	
+  	<!-- Finding the Address & Adding new marker --> 
   	<script>
         var arrayForMarkers = [];
         var markers = [];
