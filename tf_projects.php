@@ -13,6 +13,8 @@ https://github.com/saymtf/LIHTC.git
         <meta name="viewport" content="initial-scale=1.0">
    
         <!-- Import JS, CSS -->  
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
 	    <script src="https://maps.googleapis.com/maps/api/js"></script>
   	    <script type="text/javascript" src="js/maps.js"></script>
       	<script type="text/javascript" src="js/modernizr.custom.js"></script>
@@ -25,38 +27,34 @@ https://github.com/saymtf/LIHTC.git
     	<header> <img src="images/tw.png" style="width: 20%"></img></header>
         <div class="container">
             <div id="bl-main" class="bl-main">
+			
+			<!-- Build Project Home -->  
 			    <section>
-					<div class="bl-content">
-    
-					   <div class="address_fields">
-					       <h1>Address:</h1> 
+		            <div class="bl-content">
+					    
+					    <!-- Address Fields -->
+                        <div class="address_fields">
+					        <h1>Address:</h1> 
+                            
                             <input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" required />
                             <br />
                             <button onclick="" id="show">Add Address</button>
                             <button onclick="" id="hide">Remove Address</button>
-                            <form action="">
-                               <ol>
-                                    <li id="input1">
-                                        <input type="text" name="input1" required />
-                                    </li>
-                                    <li id="input2">
-                                      
-                                    </li>
-                                    <li id="input3">
-                                        
-                                    </li>
-                                    <li id="input4">
-                                      
-                                    </li>
-                                </ol> 
-                                <input type="submit" id="submit" value="Submit"/>
-                            </form>
+                            
+                            <ol>
+                                <li id="input1"></li>
+                                <li id="input2"></li>
+                                <li id="input3"></li>
+                                <li id="input4"></li>
+                            </ol> 
+                            <ul id="bl-work-items"><li data-panel="panel-1" id="submit"><a href="#">Submit</a></li></ul>
 					    </div>
+					    <!-- EOF Address Fields -->
 					    
 			            <!-- Display Map -->
 			            <div id="map"></div>
-                            <script>
-    					    var map;
+                        <script>
+                            var map;
       					    function initMap() {
         				        map = new google.maps.Map(document.getElementById('map'), {
           				        center: {lat: 37.773972, lng: -122.431297},
@@ -86,33 +84,64 @@ https://github.com/saymtf/LIHTC.git
                                 marker.addListener('click', toggleBounce);
                             }
                             
-                                function toggleBounce() {
-                                    if (marker.getAnimation() !== null) {
-                                        marker.setAnimation(null);
-                                    } else {
-                                        marker.setAnimation(google.maps.Animation.BOUNCE);
-                                    }
+                            function toggleBounce() {
+                                if (marker.getAnimation() !== null) {
+                                    marker.setAnimation(null);
+                                } else {
+                                    marker.setAnimation(google.maps.Animation.BOUNCE);
                                 }
-                            </script>
+                            }
+                        </script>
+                        <!-- EOF Display Map -->    
                             
-                            <div class="submit-content">
-                                
-                            </div>
-                    </div><!-- bl-content -->
+                    </div><!-- EOF bl-content -->
                     
                     <div class="page-title"> Project Homes </div> 
-				    
 				    <span class="bl-icon bl-icon-close"> </span>
-				    
-			    </section>
+				</section>
+			<!-- EOF Build Project Home -->
+			    	
+			    	
+			    <div class="bl-panel-items" id="bl-panel-work-items">
+					<div data-panel="panel-1">
+						<div>
+							<img src="images/1.jpg" />
+							<h3>TESTESTETST</h3>
+							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
+						</div>
+					</div>
+				<!--	<div data-panel="panel-2">
+						<div>
+							<img src="images/2.jpg" />
+							
+						</div>
+					</div>
+					<div data-panel="panel-3">
+						<div>
+							<img src="images/3.jpg" />
+							
+						</div>
+					</div>
+					<div data-panel="panel-4">
+						<div>
+							<img src="images/4.jpg" />
+						</div>
+					</div> -->
+					<nav>
+						<span class="bl-icon bl-icon-close"></span>
+					</nav>
+				</div>
             </div>
+            
+            
+            
+            
         </div><!-- EOF Container -->
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
 	    <script src="js/boxlayout.js"></script>
 		<script>
 		    
-		    /* PUT IN EXTERNAL FILE */
+	        /* PUT IN EXTERNAL FILE */
 		    // This code adds and removes a form field
 		    var count = 0;
 		    

@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+$pic = $_POST['pic'];
+$score = $_POST['score'];
+$address = $_POST['address'];
+$bio = $_POST['bio'];
+$amenities = $_POST['amenities'];
+
+?>
 <html>
 <head>
     <title>View Property</title>
@@ -7,16 +17,12 @@
 <body>
     <div class="viewHome"> 
     <div class="top">
-        <div class="house_left"><img src="images/house-03.jpg" alt="house" style="height: 250px; width: 250px;"/></div>
-        <div class="score_right"><h2>LIHTC Score</h2><h4>Address: 321 sesame str.</h4><p>HI</p></div>
+        <div class="house_left"><? echo "<img src=\". $pic .\" alt="house" style="height: 250px; width: 250px;"/>"</div>
+        <div class="score_right"><h2><?php echo $score?></h2><h4><?php echo $address ?></h4><p><?php echo $bio?></p></div>
     </div>
     <div></div>
-    <div class="bio_under">
-       <p> Closest Store : x mi.
-        Closest Hospital: y mi.
-        .
-        .
-        .
+    <div class="amenities">
+       <p> <?PHP echo $amenities ?>
         </p>
     </div>
     </div>

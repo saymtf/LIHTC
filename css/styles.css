@@ -7,6 +7,9 @@
     list-style-type: none;
 }
 
+button {
+    background-color: white;
+}
 /*********compare_one*********/
 
 .house_left {
@@ -28,7 +31,7 @@
     height:300px;
     margin:5px ;
 }
-.bio_under {
+.amenities {
     margin:5px ;
 }
 

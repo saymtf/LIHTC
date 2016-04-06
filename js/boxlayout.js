@@ -129,10 +129,21 @@ var Boxlayout = (function() {
 			$sectionWork.removeClass( 'bl-scale-down' );
 			$workPanelsContainer.removeClass( 'bl-panel-items-show' );
 			$workPanels.eq( currentWorkPanel ).removeClass( 'bl-show-work' );
+			currentWorkPanel.removeClass( 'bl-expand' ).on( transEndEventName, function( event ) { 
+				if( !$( event.target).is( 'section' )) return false;
+				$( this ).off( transEndEventName ).removeClass( 'bl-expand-top' ); 
+			});
+			
+			if( !supportTransitions ) {
+				$section.removeClass( 'bl-expand-top' );
+			}
+
+			$el.removeClass( 'bl-expand-item' );
 			
 			return false;
 
 		} );
+	
 
 	}
 
