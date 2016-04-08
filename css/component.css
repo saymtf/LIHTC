@@ -186,10 +186,8 @@ a:hover {
 	opacity: 0;
 }
 
-
-
 .bl-icon-close:before {
-	content: "Return To Previous Page";
+	content: "Lets Go Back";
 }
 
 
@@ -258,13 +256,6 @@ input[type=text]:focus {
 	border: 3px solid #555;
 }
 
-#map {
-	top: 12px;
-	padding: 10px 0 10px 10px;
-    height: 50%;
-    width: 50%;
-}
-
 .break {
 	clear:both;
 }
@@ -282,6 +273,8 @@ input[type=text]:focus {
 
 
 #project-instruction {
+	text-align: center;
+	font-weight: bold;
 	text-size: .8em;
 }
 
@@ -291,6 +284,7 @@ input[type=text]:focus {
 }
 
 #instructions {
+	text-align:center;
 	display: none;
 }
 
@@ -324,9 +318,23 @@ input[type=text]:focus {
 	color: rgba(0,0,0,0.2);
 }
 
-#home-input-fields > ul li {
-	float: none !important;
-} 
+#address {
+	padding: 20px;
+	margin: auto;
+	width: 50%;
+}
+
+#address-text {
+	width: 100%;
+	
+}
+
+#map {
+	margin: auto;
+	padding: 20px;
+    height: 100%;
+    width: 50%;
+}
 
 .bl-content > ul {
 	padding: 0;
@@ -343,7 +351,16 @@ input[type=text]:focus {
 
 .bl-content > ul li a {
 	display: block;
-	padding: 0;
+	background-color:#231F20;
+	color: white;
+    margin: 0;
+    padding:4px;
+    text-align: center;
+    text-decoration: none;
+	cursor: pointer;
+	border-radius: 4%;
+	font-size: 0.8em;
+	width:100%;
 	border: 8px solid rgba(0,0,0,0.1);
 }
 
@@ -351,6 +368,8 @@ input[type=text]:focus {
 	display: block;
 	max-width: 100%;
 }
+
+
  
 /* Panel Items */
 

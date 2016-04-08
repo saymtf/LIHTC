@@ -18,7 +18,7 @@ https://github.com/saymtf/LIHTC.git
 	<meta name="keywords" content="lihtc, project, homes" />
 	<meta name="author" content="saymtf" />
 	 <!-- Import JS, CSS -->  
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
   	<script type="text/javascript" src="js/maps.js"></script>
   	<script type="text/javascript" src="js/modernizr.custom.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -47,29 +47,33 @@ https://github.com/saymtf/LIHTC.git
 		            	<!-- Address Fields -->
                         <div class="address_fields">
 					        <h1 class="content-title">Enter Your Project Location(s) Below</h1>
-					        
 					        	<h5 id="project-instruction">Click For Instructions</h5>
 					        	<div id="instructions">
-					        		<p>&nbsp;&nbsp;&nbsp;&nbsp; Type your address below then click 'Add Address'. (After Adding an address, 'Remove Address' will appear. It will remove the latest address inserted).</p>
-					        		<p>&nbsp;&nbsp;&nbsp;&nbsp; You are allowed to have up to 4 addresses. After adding a new Address, a marker will appear to show you the location of where that home is!</p>
+					        		<p>Type your address below then click '<i>Add Address</i>'. <br /> '<i>Remove Address</i>' the latest address inserted.</p>
+					        		<p>After adding all the addresses you're interested in, press '<i>submit</i>'.</p>
+					        		<p>A Map will show locations of the addresses.<br /> <strong style="font-weight:bold;">You are allowed to compare up to 4 addresses.</strong></p>
                             	</div>
-                            <input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" required />
-                            <br />
-                            <button onclick="" id="show"><span>Add Address</span></button>
-                            <button onclick="" id="hide"><span>Remove Address</span></button>
-                            <ol>
-                                <li id="input1"></li>
-                                <li id="input2"></li>
-                                <li id="input3"></li>
-                                <li id="input4"></li>
-                            </ol> 
-                            <ul id="bl-work-items"><li data-panel="panel-1" id="submit-projects"><a id="submit-to-panel" href="#">Submit</a></li></ul>
+                            	<hr />
+                            	<div id="address">
+                            		<input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" required />
+                            		<br />
+                            		<button onclick="" id="show"><span>Add Address</span></button>
+                            		<button onclick="" id="hide"><span>Remove Address</span></button>
+                         	
+                            		<ol>
+                                		<li id="input1"></li>
+                                		<li id="input2"></li>
+                                		<li id="input3"></li>
+                                		<li id="input4"></li>
+                            		</ol> 
+                            		<ul id="bl-work-items"><li data-panel="panel-1" id="submit-projects"><a href="#">Submit</a></li></ul>
+					    		</div>
 					    </div>
+					    <hr />
+					    <!-- Display Map -->
+			            <div id="map"></div> 
 					    <!-- EOF Address Fields -->
-					    
-			           <!-- Display Map -->
-			            <div id="map"></div>    
-                    </div><!-- EOF bl-content -->
+					</div><!-- EOF bl-content -->
 				    <span class="bl-icon bl-icon-close"> </span>
 				</section>
 			<!-- EOF Build Project Home -->
@@ -103,7 +107,11 @@ https://github.com/saymtf/LIHTC.git
 						<h3><a href="compare_four.php">Compare Four</a></h3>
 						
 						
-						<p>Thoughtworks is a ... </p>
+						<p>
+							This Low Income Housing project was created by Four CSUMB students: Alonso, Jose, Miranda, and Thane. 
+							The LIHTC project was proposed by Eliza, whom is a employee at Thoughtworks, wanting to provide contractors
+							to find a perfect location regarding a score depending on surrounding enviorments in the area. 
+						</p>
 						
 						<p><a href="https://www.thoughtworks.com/about-us" target="_blank">Click here to learn more about Thoughtworks</a></p>
 					</div>
@@ -158,6 +166,13 @@ https://github.com/saymtf/LIHTC.git
 	
    		<script src="js/boxlayout.js"></script>
 		<script>
+		
+		function initMap() {
+       
+        new google.maps.places.Autocomplete((document.getElementById('address-text')),{types: ['geocode']});
+      
+      }
+      
 			$(function() {
 				Boxlayout.init();
 			});
@@ -239,8 +254,8 @@ https://github.com/saymtf/LIHTC.git
 	</script>
 	
 	<!-- FIND WHERE TO MOVE THIS -->
-  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&callback=initMap"
-  	 async defer></script>   
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initMap" async defer></script>
+  	  
   	
   	
   	<!-- Finding the Address & Adding new marker --> 
