@@ -26,5 +26,28 @@ $amenities = $_POST['amenities'];
         </p>
     </div>
     </div>
+    <a href="js/houseClass.js">Click</a>
 </body>
 </html>
+
+<script>
+    var House = function (picture, score, address, bio) {
+        this.picture = picture;
+        this.score = score;
+        this.address = address.Accounts;
+        this.bio = bio;
+        this.amenities = [];
+    };
+    
+    House.prototype.fillArray = function () {
+        //figure out how to fill array with strings from Maps API
+        console.log("asdf");
+    };
+    
+    //var a = new Array();
+    var house1 = new House("", 12, "", "");
+    
+    house1.fillArray();
+    
+    
+</script>

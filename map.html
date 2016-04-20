@@ -3,6 +3,7 @@
   <head>
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <style>
       html, body {
@@ -16,17 +17,25 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    
+    <p id="val">THIS IS P</p>
+    
     <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
+      //Documentation : api.trulia.com/webservices.php?library=LocationInfo&function=getCitiesInState&state=CA&apikey=99nb6vyprzu2w4np2ywg25r7
+      $(document).ready( function() {
+        $.ajax({
+         type: "GET",
+         dataType: "xml",
+         url: "http://api.trulia.com/webservices.php",
+         data: {'library': "LocationInfo", "function": 'getCitiesInState', 'state': 'CA', 'apikey': "99nb6vyprzu2w4np2ywg25r7"},
+         compelete(data, status) {
+           alert(status);
+         }, success(data, status) {
+           alert(status);
+         }
+       });
+    });
+      
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&callback=initMap"
-    async defer></script>
-  </body>
+    </body>
 </html>

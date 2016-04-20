@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+ <script src="js/houseClass.js">
+ //var a = new Array();
+    var house1 = new House("Picture", 12, "This is the address", "Bio goes here");
+    
+  //  house1.fillArray();
+</script>
 <html>
 
 <head>

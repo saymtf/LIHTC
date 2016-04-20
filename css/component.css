@@ -44,7 +44,8 @@ a:hover {
 
 
 #header {
-	width: 17%; 
+	width: 20%; 
+	height: 100%;
 	margin-left: 24%; 
 	padding: 60px 0 0 20px; 
 	margin-bottom: 20px
@@ -150,8 +151,9 @@ a:hover {
 }
 
 .bl-icon {
-	font-family: 'fa fa-times';
+	font-family: FontAwesome;
 	speak: none;
+	color: #000;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -187,7 +189,8 @@ a:hover {
 }
 
 .bl-icon-close:before {
-	content: "Lets Go Back";
+/*	content: "Lets Go Back"; */
+	content: '\f057';
 }
 
 
@@ -241,6 +244,12 @@ div.bl-panel-items > div > div {
 	font-size: 0.8em;
 }
 
+#show:hover, #hide:hover {
+	background-color:white;
+	color:#231F20;
+}
+
+
 .address_fields input[type=text] {
 	width: 100%;
     padding: 12px 20px;
@@ -265,6 +274,11 @@ input[type=text]:focus {
 	padding-left:128px;
 }
 
+#home_fields {
+	margin: auto;
+	width:50%;
+}
+
 #info-text {
 	text-align: center;
 	font-weight: bold;
@@ -284,8 +298,27 @@ input[type=text]:focus {
 }
 
 #instructions {
-	text-align:center;
+	margin: 0 auto;
+	width: 50%;
 	display: none;
+}
+
+#bl-work-items li{
+	list-style:none;
+	display:inline-block;
+	background-color:#231F20;
+	color: white;
+    text-align: center;
+    text-decoration: none;
+	cursor: pointer;
+	border-radius: 2%;
+	font-size: 1.2em;
+	width:90%;
+} 
+
+#bl-work-items:hover li, #bl-work-items:hover a {
+	background-color: white;
+	color:#231F20;
 }
 
 .bl-content p {
@@ -314,9 +347,20 @@ input[type=text]:focus {
 	font-size: 1.4em;
 }
 
+
 .bl-content article a {
 	color: rgba(0,0,0,0.2);
 }
+
+#home-input-fields {
+	float:none;
+	list-style:none;
+}
+
+#home-input-fields ul {
+	width:25%;
+}
+
 
 #address {
 	padding: 20px;
@@ -336,6 +380,9 @@ input[type=text]:focus {
     width: 50%;
 }
 
+#about-thoughtworks:hover {
+	color:#231F20;
+}
 .bl-content > ul {
 	padding: 0;
 	margin: 0;
@@ -568,10 +615,10 @@ section.bl-expand .bl-box {
 }
 
 .no-touch section:not(.bl-expand) .bl-box:hover h2, .no-touch section:not(.bl-expand) .bl-box:hover h4 {
-	-webkit-transform: translateY(-15px);
-	-moz-transform: translateY(-15px);
-	-ms-transform: translateY(-15px);
-	transform: translateY(-15px);
+	-webkit-transform: translateY(-7px);
+	-moz-transform: translateY(-7px);
+	-ms-transform: translateY(-7px);
+	transform: translateY(-7px);
 }
 
 

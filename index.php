@@ -34,14 +34,14 @@ https://github.com/saymtf/LIHTC.git
   <body>
   	
   	<!-- ADD WHEN USER CLICKS HEADER BANNER IT TAKES THEM BACK TO MAIN PAGE -->
-  	<header><img id="header" src="images/tw-logo.png"></img></header>
+  	<header><img id="header" src="images/lihtc_header.png"></img></header>
   		<div class="container">	
 		<!--	<div class="empty-block"><span id="info-text">Welcome to Thoughtworks!<br /> &nbsp; Choose an options below to get started.</span></div> -->
 			<div id="bl-main" class="bl-main">
 				<!-- Build Project Home -->  
 			    <section>
 			    	<div class="bl-box"> 
-						<h2><span class="fa fa-building-o fa-lg"></span><br/>Click To Build A Project Home</h2>
+						<h2><span class="fa fa-building-o fa-lg"></span><br/><br/>Click To Build A Project Home</h2>
 					</div>
 		            <div class="bl-content">
 		            	<!-- Address Fields -->
@@ -81,16 +81,31 @@ https://github.com/saymtf/LIHTC.git
 			<!-- Homes Project -->	
 				<section>
 					<div class="bl-box"> 
-						<h2><span class="fa fa-home fa-lg"></span><br/>Click To Find A New Home</h2>
+						<h2><span class="fa fa-home fa-lg"></span><br/><br/>Click To Find A New Home</h2>
 					</div>
 					<div class="bl-content">
-						<h1 class="content-title">Fill In The Form To Find A Perfect Affordable Home</h1> 
-						<ul id="home-input-fields">
-							<li>State <input type="text" id="state-field" placeholder="CA" required /></li>
-							<li>City <input type="text" id="city-field" placeholder="San Francisco" required /></li>
-							<li>Annual Income <input type="text" id="annual-field" placeholder="23000" required /></li>
-						</ul>
-						<ul id="bl-work-items"><li data-panel="panel-5" id="submit-homes"><a id="submit-to-panel" href="#">Submit</a></li></ul>
+						<h1 class="content-title">Fill In The Form To Find A Perfect Affordable Home</h1>
+						<hr />
+						<div id="home_fields">
+							<ul id="home-input-fields">
+								<li>
+									<label>State</label><br />
+									<input type="text" id="state-field" placeholder="CA" required />
+								</li>
+								<br />
+								<li>
+									<label>City</label><br />
+									<input type="text" id="city-field" placeholder="San Francisco" required />
+								</li>
+								<br />
+								<li>
+									<label>Annual Income</label><br />
+									<input type="text" id="annual-field" placeholder="23000" required />
+								</li>
+								<br />
+							</ul>
+							<ul id="bl-work-items"><li data-panel="panel-5" id="submit-homes"><a id="submit-to-panel" href="#">Submit</a></li></ul>
+						</div>
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -102,18 +117,19 @@ https://github.com/saymtf/LIHTC.git
 						<h4>About Us</h4>
 					</div>
 					<div class="bl-content">
-						<h3><a href="compare_one.php">Compare</a></h3>
-						<h3><a href="compare_two.php">Compare TWO</a></h3>
-						<h3><a href="compare_four.php">Compare Four</a></h3>
-						
-						
 						<p>
-							This Low Income Housing project was created by Four CSUMB students: Alonso, Jose, Miranda, and Thane. 
+							This Low Income Housing project was created by four CSUMB students: Alonso, Jose, Miranda, and Thane. 
 							The LIHTC project was proposed by Eliza, whom is a employee at Thoughtworks, wanting to provide contractors
 							to find a perfect location regarding a score depending on surrounding enviorments in the area. 
 						</p>
 						
-						<p><a href="https://www.thoughtworks.com/about-us" target="_blank">Click here to learn more about Thoughtworks</a></p>
+						<p><a id="about-thoughtworks" href="https://www.thoughtworks.com/about-us" target="_blank">Click here to learn more about Thoughtworks</a></p>
+					
+						<h1 style="color:000;"><b>TESTING PAGES</b></h1>
+						<h3><a href="compare_one.php">Compare</a></h3>
+						<h3><a href="compare_two.php">Compare TWO</a></h3>
+						<h3><a href="compare_four.php">Compare Four</a></h3>
+						
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -125,7 +141,10 @@ https://github.com/saymtf/LIHTC.git
 						<div>
 							<img src="images/1.jpg" />
 							<h3>Panel 1</h3>
-					
+							<p id="address-name"></p>
+							<script>
+								document.getElementById("address-name").innerHTML = arrayForMarkers[0]['address'];
+							</script>
     					</div>
     				</div>	
 					<div data-panel="panel-2">
@@ -182,7 +201,7 @@ https://github.com/saymtf/LIHTC.git
     			$('#instructions').toggle('slide');
 			});
 			
-/* PUT IN EXTERNAL FILE */
+		/* PUT IN EXTERNAL FILE */
 		    /*** This code adds and removes a form field ***/
 		    var count = 0;
 		    $(document).ready(function() {	
@@ -198,20 +217,20 @@ https://github.com/saymtf/LIHTC.git
                 
                 
 		        $("#show").click(function() {
-		        	
-		        
-		            if(count <= 4) {
+		        	if($('#address-text').val() != "") { 
+		            	if(count <= 4) {
 		                
-		                var anInput = "input";
-		                var address = $('#address-text').val();
-		                count++;
-                        anInput = anInput.concat(count.toString());
-                        document.getElementById(anInput).innerHTML = address;
-                        anInput = "#".concat(anInput); 
-		                $(anInput).show();
-		                $("#submit-projects").show();
-		                $("#map").show();
+		                	var anInput = "input";
+		                	var address = $('#address-text').val();
+		                	count++;
+                        	anInput = anInput.concat(count.toString());
+                        	document.getElementById(anInput).innerHTML = address;
+                        	anInput = "#".concat(anInput); 
+		                	$(anInput).show();
+		                	$("#submit-projects").show();
+		                	$("#map").show();
 		                
+		            	}
 		            }
 		            
 		            // Hide/Show ElementId Button (Put as a function)
@@ -248,7 +267,6 @@ https://github.com/saymtf/LIHTC.git
 	<script>
 		$("#submit-projects").click(function() {
 			var $panelName = "panel-".concat(count);
-			alert($panelName);
 			$("li").data("panel", $panelName);
 		});
 	</script>
@@ -266,24 +284,26 @@ https://github.com/saymtf/LIHTC.git
         $(document).ready(function(){
         	$('#show').click(function() {
                 var address = $('#address-text').val();
-                $.ajax({
-                    dataType: "json",
-                    url: "https://maps.googleapis.com/maps/api/geocode/json",
-                    data: {address: address, key: "AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I"},
-                    success: function(data, status) {
-                       /* alert(data['results'][0]['geometry']['location']['lat']); //LOCATION LAT*/
-                        lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
-                        lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
+                if(address != "") {
+        	        $.ajax({
+    	                dataType: "json",
+	                    url: "https://maps.googleapis.com/maps/api/geocode/json",
+                	    data: {address: address, key: "AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I"},
+            	        success: function(data, status) {
+        	               /* alert(data['results'][0]['geometry']['location']['lat']); //LOCATION LAT*/
+    	                    lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
+	                        lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
                         
-                        markers = {lat:lat, lng:lng, address:address, markerCount:count};
-                        arrayForMarkers.push(markers);
-                        
-                        updateMap(lat, lng, count, address, arrayForMarkers);
-                    },
-                    complete: function(data, status) {
-                       /* alert(status); */ // DEBUG
-                    }
-            	});
+                    	    markers = {lat:lat, lng:lng, address:address, markerCount:count};
+                    	    arrayForMarkers.push(markers);
+                	        
+            	            updateMap(lat, lng, count, address, arrayForMarkers);
+        	            },
+    	                complete: function(data, status) {
+	                       /* alert(status); */ // DEBUG
+                    	}
+            		});
+                }
            });
            
            
