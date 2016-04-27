@@ -94,8 +94,13 @@ a:hover {
 	width: 48%;
 	height: 10%;
 	left: 25%;
-	background: #ff0066;
-	opacity: 0.7;
+	background:
+		linear-gradient(
+      		rgba(255,76,148, 0.6),
+      		rgba(255,76,148, 0.6)
+    	),
+		url(../images/tech.jpg);
+	
 }
 
 
@@ -352,6 +357,11 @@ input[type=text]:focus {
 	color: rgba(0,0,0,0.2);
 }
 
+#home-input-fields-div {
+	margin: 0 auto;
+	width: 35%;
+}
+
 #home-input-fields {
 	float:none;
 	list-style:none;
@@ -361,6 +371,10 @@ input[type=text]:focus {
 	width:25%;
 }
 
+#home-input-fields label{
+	display: inline-block;
+    text-align: center;
+}
 
 #address {
 	padding: 20px;
@@ -378,6 +392,16 @@ input[type=text]:focus {
 	padding: 20px;
     height: 100%;
     width: 50%;
+}
+
+#about-us-content {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#about-thoughtworks {
+	font-size: .8em;
+	text-align: center;
 }
 
 #about-thoughtworks:hover {
@@ -460,7 +484,14 @@ div.bl-panel-items {
 }
 
 div.bl-panel-items > div {
-	background: #3ba5db;
+	background:
+ 		linear-gradient(
+ 			rgba(126,206,215, 0.3),
+ 			rgba(126,206,215, 0.3)
+    	),
+    	/* bottom, image */
+    	url(../images/tech.jpg);
+	
 	z-index: 0;
 	opacity: 0;
 	-webkit-transform: translateY(0);
@@ -568,8 +599,12 @@ div.bl-panel-items > div.bl-hide-current-work {
     	url(https://67fb162d391b3c725e9d-210fd98f9f4ad5bac2f98cc8e61aaae5.ssl.cf2.rackcdn.com/images/photo-card-grid/continuous-delivery-reduced.jpg);
 }
 .bl-main > section:nth-child(3).bl-expand {
-	background: #ff0066;
-	opacity:.6;
+	background: 
+		linear-gradient(
+			rgba(255,102,163, 0.4),
+			rgba(255,102,163, 0.4)
+		),
+		url(../images/about_background.jpg);
 }
 
 #show:hover span, #hide:hover span {

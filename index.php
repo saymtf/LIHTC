@@ -1,11 +1,3 @@
-<!-- 
-GIT REPO:
-
-https://github.com/saymtf/LIHTC.git 
-#1589FF BLUE
-#5EFB6E GREEN
--->
-  
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
@@ -18,16 +10,16 @@ https://github.com/saymtf/LIHTC.git
 	<meta name="keywords" content="lihtc, project, homes" />
 	<meta name="author" content="saymtf" />
 	 <!-- Import JS, CSS -->  
-	<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
   	<script type="text/javascript" src="js/maps.js"></script>
+  	<script type="text/javascript" src="js/score.js"></script>
   	<script type="text/javascript" src="js/modernizr.custom.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   	<link rel="shortcut icon" href="images/favicon.ico" /> 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
-	<!-- <link rel="stylesheet" href="css/mainsheet.css" /> -->
 	
+	<script type="text/javascript" src="js/houseClass.js"></script>
 	<title>LIHTC</title>
 	
   </head>
@@ -36,7 +28,6 @@ https://github.com/saymtf/LIHTC.git
   	<!-- ADD WHEN USER CLICKS HEADER BANNER IT TAKES THEM BACK TO MAIN PAGE -->
   	<header><img id="header" src="images/lihtc_header.png"></img></header>
   		<div class="container">	
-		<!--	<div class="empty-block"><span id="info-text">Welcome to Thoughtworks!<br /> &nbsp; Choose an options below to get started.</span></div> -->
 			<div id="bl-main" class="bl-main">
 				<!-- Build Project Home -->  
 			    <section>
@@ -57,10 +48,9 @@ https://github.com/saymtf/LIHTC.git
                             	<div id="address">
                             		<input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" required />
                             		<br />
-                            		<button onclick="" id="show"><span>Add Address</span></button>
-                            		<button onclick="" id="hide"><span>Remove Address</span></button>
-                         	
-                            		<ol>
+                            		<button id="show"><span>Add Address</span></button>
+                            		<button id="hide"><span>Remove Address</span></button>
+                         			<ol>
                                 		<li id="input1"></li>
                                 		<li id="input2"></li>
                                 		<li id="input3"></li>
@@ -87,23 +77,25 @@ https://github.com/saymtf/LIHTC.git
 						<h1 class="content-title">Fill In The Form To Find A Perfect Affordable Home</h1>
 						<hr />
 						<div id="home_fields">
-							<ul id="home-input-fields">
-								<li>
-									<label>State</label><br />
-									<input type="text" id="state-field" placeholder="CA" required />
-								</li>
-								<br />
-								<li>
-									<label>City</label><br />
-									<input type="text" id="city-field" placeholder="San Francisco" required />
-								</li>
-								<br />
-								<li>
-									<label>Annual Income</label><br />
-									<input type="text" id="annual-field" placeholder="23000" required />
-								</li>
-								<br />
-							</ul>
+							<div id="home-input-fields-div">
+								<ul id="home-input-fields">
+									<li>
+										<label>State</label><br />
+										<input type="text" id="state-field" placeholder="CA" required />
+									</li>
+									<br />
+									<li>
+										<label>City</label><br />
+										<input type="text" id="city-field" placeholder="San Francisco" required />
+									</li>
+									<br />
+									<li>
+										<label>Income</label><br />
+										<input type="text" id="annual-field" placeholder="23000" required />
+									</li>
+									<br />
+								</ul>
+							</div>
 							<ul id="bl-work-items"><li data-panel="panel-5" id="submit-homes"><a id="submit-to-panel" href="#">Submit</a></li></ul>
 						</div>
 					</div>
@@ -117,14 +109,22 @@ https://github.com/saymtf/LIHTC.git
 						<h4>About Us</h4>
 					</div>
 					<div class="bl-content">
-						<p>
+						<h1 class="content-title">About This Project</h1>
+						<hr />
+						<div id="about-us-content">
+							
+							<p>
 							This Low Income Housing project was created by four CSUMB students: Alonso, Jose, Miranda, and Thane. 
-							The LIHTC project was proposed by Eliza, whom is a employee at Thoughtworks, wanting to provide contractors
+							</p>
+							
+							<p>
+							The LIHTC project was proposed by Eliza, whom is a employee at Thoughtworks wanting to provide contractors
 							to find a perfect location regarding a score depending on surrounding enviorments in the area. 
-						</p>
+							</p>
+						</div>
 						
-						<p><a id="about-thoughtworks" href="https://www.thoughtworks.com/about-us" target="_blank">Click here to learn more about Thoughtworks</a></p>
-					
+						<hr />
+						<div id="about-us-content">	<p><a id="about-thoughtworks" href="https://www.thoughtworks.com/about-us" target="_blank">Learn more about Thoughtworks</a></p> </div>
 						<h1 style="color:000;"><b>TESTING PAGES</b></h1>
 						<h3><a href="compare_one.php">Compare</a></h3>
 						<h3><a href="compare_two.php">Compare TWO</a></h3>
@@ -139,33 +139,43 @@ https://github.com/saymtf/LIHTC.git
 				<div class="bl-panel-items" id="bl-panel-work-items">
 					<div data-panel="panel-1">
 						<div>
-							<img src="images/1.jpg" />
 							<h3>Panel 1</h3>
 							<p id="address-name"></p>
-							<script>
-								document.getElementById("address-name").innerHTML = arrayForMarkers[0]['address'];
-							</script>
+							
+							<div id="testing">
+								<p id="p1"></p>
+								
+							</div>
     					</div>
     				</div>	
 					<div data-panel="panel-2">
 						<div>
-							<img src="images/1.jpg" />
 							<h3>Panel 2</h3>
 							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
+							<div id="testing">
+								<p id="p2"></p>
+								
+							</div>
 						</div>
 					</div>
 					<div data-panel="panel-3">
 						<div>
-							<img src="images/1.jpg" />
 							<h3>Panel 3</h3>
 							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
+							<div id="testing">
+								<p id="p3"></p>
+								
+							</div>
 						</div>
 					</div>
 					<div data-panel="panel-4">
 						<div>
-							<img src="images/1.jpg" />
 							<h3>PANEL 4</h3>
 							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
+							<div id="testing">
+								<p id="p4"></p>
+								
+							</div>
 						</div>
 					</div>
 					<div data-panel="panel-5">
@@ -184,13 +194,51 @@ https://github.com/saymtf/LIHTC.git
 	
 	
    		<script src="js/boxlayout.js"></script>
+   			<!-- Finding the Address & Adding new marker --> 
+   			<script>
+    		$("#submit-projects").click(function() {
+			var $panelName = "panel-".concat(count);
+			$("li").data("panel", $panelName);
+			test(window.arrayForMarkers);
+		});
+    </script>
+  	<script>
+        var arrayForMarkers = [];
+        var markers = [];
+    
+        $(document).ready(function(){
+        	$('#show').click(function() {
+                var address = $('#address-text').val();
+                if(address != "") {
+        	        $.ajax({
+    	                dataType: "json",
+	                    url: "https://maps.googleapis.com/maps/api/geocode/json",
+                	    data: {address: address, key: "AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I"},
+            	        success: function(data, status) {
+        	               /* alert(data['results'][0]['geometry']['location']['lat']); //LOCATION LAT*/
+    	                    lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
+	                        lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
+                        
+                    	    markers = {lat:lat, lng:lng, address:address, markerCount:count};
+                    	    arrayForMarkers.push(markers);
+                	        
+            	            updateMap(lat, lng, count, address, arrayForMarkers);
+            	            
+        	            },
+    	                complete: function(data, status) {
+	                       /* alert(status); */ // DEBUG
+                    	}
+            		});
+                }
+           });
+           
+           
+    	});
+    	</script>
+    	
+    	 
 		<script>
 		
-		function initMap() {
-       
-        new google.maps.places.Autocomplete((document.getElementById('address-text')),{types: ['geocode']});
-      
-      }
       
 			$(function() {
 				Boxlayout.init();
@@ -247,7 +295,7 @@ https://github.com/saymtf/LIHTC.git
                         anInput = anInput.concat(count.toString());
                         $(anInput).hide();
 		                count--;
-		                arrayForMarkers.pop()
+		               arrayForMarkers.pop()
 		                //updateMap(arrayForMarkers[count]['lat'], arrayForMarkers[count]['lat'], count, arrayForMarkers[count]['address']); // if user removed - remove marker
 		            }
 		            
@@ -264,50 +312,17 @@ https://github.com/saymtf/LIHTC.git
 	
 	</body>
 	
-	<script>
-		$("#submit-projects").click(function() {
-			var $panelName = "panel-".concat(count);
-			$("li").data("panel", $panelName);
-		});
-	</script>
+
 	
 	<!-- FIND WHERE TO MOVE THIS -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initMap" async defer></script>
   	  
   	
   	
-  	<!-- Finding the Address & Adding new marker --> 
-  	<script>
-        var arrayForMarkers = [];
-        var markers = [];
+  
     
-        $(document).ready(function(){
-        	$('#show').click(function() {
-                var address = $('#address-text').val();
-                if(address != "") {
-        	        $.ajax({
-    	                dataType: "json",
-	                    url: "https://maps.googleapis.com/maps/api/geocode/json",
-                	    data: {address: address, key: "AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I"},
-            	        success: function(data, status) {
-        	               /* alert(data['results'][0]['geometry']['location']['lat']); //LOCATION LAT*/
-    	                    lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
-	                        lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
-                        
-                    	    markers = {lat:lat, lng:lng, address:address, markerCount:count};
-                    	    arrayForMarkers.push(markers);
-                	        
-            	            updateMap(lat, lng, count, address, arrayForMarkers);
-        	            },
-    	                complete: function(data, status) {
-	                       /* alert(status); */ // DEBUG
-                    	}
-            		});
-                }
-           });
-           
-           
-    	});
-    </script> 
+    	<script>
+	
+	</script>
   
 </html>

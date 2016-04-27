@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <p class="greeting-id">THIS IS P </p>
+     <p class="greeting-content">The content is </p>
+    <script>
+      $.ajax({
+         url:"http://rest-service.guides.spring.io/greeting" 
+      }).then(function(data) {
+          $('.greeting-id').append(data.id);
+          $('.greeting-content').append(data.content);
+      });
+    </script>
+    </body>
+</html>

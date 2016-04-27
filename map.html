@@ -4,6 +4,8 @@
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
     <meta charset="utf-8">
     <style>
       html, body {
@@ -22,20 +24,47 @@
     
     <script>
       //Documentation : api.trulia.com/webservices.php?library=LocationInfo&function=getCitiesInState&state=CA&apikey=99nb6vyprzu2w4np2ywg25r7
-      $(document).ready( function() {
-        $.ajax({
+     
+      $.ajax({
          type: "GET",
+         contentType: "application/xml",
          dataType: "xml",
+         crossDomain: "true",
          url: "http://api.trulia.com/webservices.php",
-         data: {'library': "LocationInfo", "function": 'getCitiesInState', 'state': 'CA', 'apikey': "99nb6vyprzu2w4np2ywg25r7"},
+         data: 
+          {
+            "library": "LocationInfo", 
+            "function": "getCitiesInState",
+            "state": "CA",
+            "apikey": "99nb6vyprzu2w4np2ywg25r7"
+          },
          compelete(data, status) {
            alert(status);
          }, success(data, status) {
            alert(status);
          }
        });
+    
+    /*var dataString = "library=LocationInfo&function=getCitiesInState&state=CA&apikey=99nb6vyprzu2w4np2ywg25r7";
+    
+    $.ajax({
+      type: "GET",
+      dataType: "xml",
+      crossDomain: "true",
+      url: "http://api.trulia.com/webservices.php",
+      cache: false,
+      data: dataString,
+
+      success: function(html){
+        //$("#more").after(html);
+        alert("Success!");
+      }
     });
-      
+    
+    $.getJSON('http://api.trulia.com/webservices.php?' + dataString, function(json_data){
+      alert(JSON.stringify(json_data));
+    });
+      */
     </script>
     </body>
 </html>
