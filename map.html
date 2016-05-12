@@ -4,6 +4,8 @@
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script type="text/javascript" src="js/score.js"></script>
+  	<script type="text/javascript" src="js/maps.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
 <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
     <meta charset="utf-8">
@@ -14,17 +16,26 @@
         padding: 0;
       }
       #map {
-        height: 100%;
+        height: 100% !important;
+        width: 100% !important;
       }
     </style>
   </head>
   <body>
     
     <p id="val">THIS IS P</p>
+    <div id="homeMap"></div>
     
+    	<!-- FIND WHERE TO MOVE THIS -->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initMap" async defer></script>
+  	  
     <script>
+   // function initMap() {
+  //    map = new google.maps.Map(document.getElementById('map'), { center: {lat: -34.397, lng: 150.644}, zoom: 8});
+   // }
+      
       //Documentation : api.trulia.com/webservices.php?library=LocationInfo&function=getCitiesInState&state=CA&apikey=99nb6vyprzu2w4np2ywg25r7
-     
+     /*
       $.ajax({
          type: "GET",
          contentType: "application/xml",

@@ -47,6 +47,10 @@
     height:500px;
     width:500px;
   }
+  
+   #street-view {
+        height: 100%;
+      }
     </style>
    
     
@@ -64,179 +68,89 @@
              
              
     </div>
-        <button id="search" onclick="getLocation()">Search</button>
+        <button id="search" onclick="initialize()">Search</button>
         <button id="display" onclick="displayInfo()">Display</button>
         <br><br><br>
-        <div id="map"></div>
-        
+        <div id="street-view"></div>
     <script>
-   
-      var placeSearch, autocomplete;
-      var map;
-      var service;
-     // var infowindow = new.google.maps.InfoWindow();
-    //  var service = new.google.maps.places.PlacesServices(map);
-      var details;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
-      
-      var latitude = 0;
-      var longitude = 0;
-      var place = new Array();
-    
-      
-     function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),{types: ['geocode']});
-      
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-       // autocomplete.addListener('place_changed', fillInAddress);
+    	function initMap() {
+      addressTyped = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),{types: ['geocode']});
+		}
+		
+     var panorama;
+
+      // StreetViewPanoramaData of a panorama just outside the Google Sydney office.
+      var outsideGoogle;
+
+      // StreetViewPanoramaData for a custom panorama: the Google Sydney reception.
+      function getReceptionPanoramaData() {
+        return {
+          location: {
+            pano: 'reception',  // The ID for this custom panorama.
+            description: 'Google Sydney - Reception',
+            latLng: new google.maps.LatLng(addressTyped.lat, addressTyped.lng)
+          },
+          links: [{
+            heading: 195,
+            description: 'Exit',
+            pano: outsideGoogle.location.pano
+          }],
+          copyright: 'Imagery (c) 2010 Google',
+          tiles: {
+            tileSize: new google.maps.Size(1024, 512),
+            worldSize: new google.maps.Size(2048, 1024),
+            centerHeading: 105,
+            getTileUrl: function(pano, zoom, tileX, tileY) {
+              return 'https://developers.google.com/maps/documentation/javascript/examples/full/images/' +
+                  'panoReception1024-' + zoom + '-' + tileX + '-' + tileY + '.jpg';
+            }
+          }
+        };
       }
-      var counter1 = 0;
-      var counter2 = 0;
-      
-      function displayInfo()
-      {
-        var place = new google.maps.LatLng(latitude,longitude);
-        
-        map = new google.maps.Map(document.getElementById('map'), {center: place,zoom: 15});
-        var request = 
-        {
-          location: place,
-          radius: '350',
-          types: ['bus_station']
-        };
-        var request2 = 
-        {
-          location: place,
-          radius: '6440',
-          types: ['school']
-        };
-        var request3 = 
-        {
-          location: place,
-          radius: '1400',
-          types: ['grocery_or_supermarket']
-        };
-        var request4 = 
-        {
-          location: place,
-          radius: '16093',
-          types: ['hospital']
-        };
-        var request5 = 
-        {
-          location: place,
-          radius: '1600',
-          types: ['health']
-        };
-         var request6 = 
-        {
-          location: place,
-          radius: '1400',
-          types: ['gas_station']
-        };
-         var request7 = 
-        {
-          location: place,
-          radius: '1609',
-          types: ['restaurant']
-        };
-        var request8 =
-        {
-          location: place,
-          radius: '800',
-          types: ['bank']
-        };
-         var request9 =
-        {
-          location: place,
-          radius: '700',
-          types: ['park']
-        };
-        var marker = new google.maps.Marker({map: map,position: details.geometry.location});
-        
-        service = new google.maps.places.PlacesService(map);
-        var cityCircle = new google.maps.Circle({strokeColor: '#FF0000',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 350});
-        
-        new google.maps.Circle({strokeColor: '#FF0000',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 6440});
-        
-        new google.maps.Circle({strokeColor: '#344E73',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 1400});
-        
-        new google.maps.Circle({strokeColor: '#003300',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 16093});
-        
-        new google.maps.Circle({strokeColor: '#cc3300',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 1600});
-        
-        new google.maps.Circle({strokeColor: '#ff0066',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 1400});
-        
-        new google.maps.Circle({strokeColor: '#33cccc',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 1609});
-        
-        new google.maps.Circle({strokeColor: '#cc9900',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 800});
-        
-        new google.maps.Circle({strokeColor: '#cc9900',strokeOpacity: 0.8,strokeWeight: 2,
-        fillColor: '#FF0000',fillOpacity: 0.05,map: map,center: place,radius: 700});
-        
+
+      function initPanorama() {
+        panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('street-view'),
+            {
+              pano: outsideGoogle.location.pano,
+              // Register a provider for our custom panorama.
+              panoProvider: function(pano) {
+                if (pano === 'reception') {
+                  return getReceptionPanoramaData();
+                }
+              }
+            });
+
+        // Add a link to our custom panorama from outside the Google Sydney office.
+        panorama.addListener('links_changed', function() {
+          if (panorama.getPano() === outsideGoogle.location.pano) {
+            panorama.getLinks().push({
+              description: 'Google Sydney',
+              heading: 25,
+              pano: 'reception'
+            });
+          }
+        });
+      }
+
+      function initialize() {
+         var map = new google.maps.Map(document.getElementById('autocomplete')); 
+        // Use the Street View service to find a pano ID on Pirrama Rd, outside the
+        // Google office.
        
-        
-        
-        service.nearbySearch(request, callback);
-        service.nearbySearch(request2, callback);
-        service.nearbySearch(request3, callback);
-        service.nearbySearch(request4, callback);
-        service.nearbySearch(request5, callback);
-        service.nearbySearch(request6, callback);
-        service.nearbySearch(request7, callback);
-        service.nearbySearch(request8, callback);
-        service.nearbySearch(request9, callback);
-      }
-      
-      //'restaurant'|'hospital'|'grocery_or_supermarket'|'school'|'store'|'university'|'airport'|
-     function callback(results, status)
-     {
-      
-     
-      if (status == google.maps.places.PlacesServiceStatus.OK)
-      {
-        for (var i = 0; i < results.length; i++)
-        {
-          place.push(results[i]);
-          console.log(place[place.length - 1]);
-         
-        }
-        place.length = results.length + place.length;
-      }
-     }
-      
-     
-   
-    
- 
-    
-    
-      
-      function getLocation()
-      {
-        details = autocomplete.getPlace();
-        latitude = details.geometry.location.lat();
-        longitude = details.geometry.location.lng(); 
+        // var streetviewService = new google.maps.StreetViewService;
+        // streetviewService.getPanorama(
+        //     {location: {lat: addressTyped.lat, lng: addressTyped.lng}},
+        //     function(result, status) {
+        //       if (status === google.maps.StreetViewStatus.OK) {
+        //         outsideGoogle = result;
+        //         initPanorama();
+        //       }
+        //     });
+              console.log(map);
+
       }
      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initAutocomplete" async defer></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initMap" async defer></script>
     </body>
 </html>

@@ -38,7 +38,7 @@
 		            	<!-- Address Fields -->
                         <div class="address_fields">
 					        <h1 class="content-title">Enter Your Project Location(s) Below</h1>
-					        	<h5 id="project-instruction">Click For Instructions</h5>
+					        	<h5 id="project-instruction"><!--<span class="fa fa-info-circle fa-3x" id="info_field"></span>--> Click For Instructions</h5>
 					        	<div id="instructions">
 					        		<p>Type your address below then click '<i>Add Address</i>'. <br /> '<i>Remove Address</i>' the latest address inserted.</p>
 					        		<p>After adding all the addresses you're interested in, press '<i>submit</i>'.</p>
@@ -64,7 +64,7 @@
 			            <div id="map"></div> 
 					    <!-- EOF Address Fields -->
 					</div><!-- EOF bl-content -->
-				    <span class="bl-icon bl-icon-close"> </span>
+				    <span class="bl-icon bl-icon-close bl-content-icon-close"> </span>
 				</section>
 			<!-- EOF Build Project Home -->
 				
@@ -143,7 +143,7 @@
 							<p id="address-name"></p>
 							
 							<div id="testing">
-								<p id="p1"></p>
+								<span id="p11" style="font-size: 200%"></span><span id="p1"></span>
 								
 							</div>
     					</div>
@@ -181,6 +181,7 @@
 					<div data-panel="panel-5">
 						<div>
 							<h3>PANEL 5 -- FINDING A HOME</h3>
+							<div id="homeMap"></div>
 						</div>
 					</div>
 					<nav>
@@ -190,22 +191,41 @@
 			<!-- EOF Panel items for project homes -->	
 				
 			</div>
-		</div><!-- /container -->
+		</div><!-- container -->
 	
 	
-   		<script src="js/boxlayout.js"></script>
-   			<!-- Finding the Address & Adding new marker --> 
-   			<script>
-    		$("#submit-projects").click(function() {
-			var $panelName = "panel-".concat(count);
+   	<script src="js/boxlayout.js"></script>
+   	<!-- Finding the Address & Adding new marker --> 
+   	
+   	<script>
+   		
+    	$("#submit-projects").click(function() {
+    		var $panelName = "panel-".concat(count);
 			$("li").data("panel", $panelName);
-			test(window.arrayForMarkers);
+			test(window.arrayForMarkers, window.elements);
 		});
     </script>
+    
+    <script>
+    	$(".bl-content-icon-close").click(function() {
+    		arrayForMarkers = [];
+    		markers = [];
+    		elements = [];
+    		count = 0;
+    	//	$("ol").empty();
+    		$("#address-text").empty();
+    		$("#map").css("display", "none");
+            $("#hide").css("display", "none");
+            $("#submit-projects").css("display", "none");
+    	});
+    </script>
+    
+    
   	<script>
         var arrayForMarkers = [];
         var markers = [];
     
+    	var elements = [];
         $(document).ready(function(){
         	$('#show').click(function() {
                 var address = $('#address-text').val();
@@ -219,6 +239,8 @@
     	                    lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
 	                        lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
                         
+                        	elements.push(document.getElementById('address-text'));
+                        	
                     	    markers = {lat:lat, lng:lng, address:address, markerCount:count};
                     	    arrayForMarkers.push(markers);
                 	        
@@ -316,13 +338,5 @@
 	
 	<!-- FIND WHERE TO MOVE THIS -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initMap" async defer></script>
-  	  
-  	
-  	
-  
-    
-    	<script>
-	
-	</script>
   
 </html>

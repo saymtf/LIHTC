@@ -7,6 +7,7 @@ function updateMap(latitude, longitude, markerCount, addressTitle, arrayForMarke
   else if(markerCount == 2) { zoom = 12; }
                                 
   gMap = new google.maps.Map(document.getElementById('map')); 
+  gMap.setMapTypeId(google.maps.MapTypeId.SATELLITE );
   gMap.setZoom(zoom);  
   gMap.setCenter(new google.maps.LatLng(lat, lng));
                                 
@@ -30,4 +31,5 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
+
 

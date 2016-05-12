@@ -15,7 +15,7 @@ bl-panel-items, panel-#: Panels are made for individual content per <i>address</
 
 
 <b>Functionality</b>
-BoxLayout: Used for scaling the transitions of each <i>page</i>.
+BoxLayout: Used for scaling, hiding the transitions of each <i>page</i>.
 House: Holds the data of each address inputted: address, lihtc score, amenities<strike>, picture</strike>.
 Maps: The init and display information for the map and pins.
 Score: Calculates the score, and processes the nearby information regarding the address.

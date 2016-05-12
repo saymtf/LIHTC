@@ -99,8 +99,8 @@ a:hover {
       		rgba(255,76,148, 0.6),
       		rgba(255,76,148, 0.6)
     	),
-		url(../images/tech.jpg);
-	
+		url(../images/about_background.jpg);
+
 }
 
 
@@ -601,10 +601,11 @@ div.bl-panel-items > div.bl-hide-current-work {
 .bl-main > section:nth-child(3).bl-expand {
 	background: 
 		linear-gradient(
-			rgba(255,102,163, 0.4),
-			rgba(255,102,163, 0.4)
+			rgba(225,47,91, 0.8),
+			rgba(225,47,91, 0.8)
 		),
-		url(../images/about_background.jpg);
+		url(../images/tech.jpg);
+	
 }
 
 #show:hover span, #hide:hover span {
@@ -709,4 +710,16 @@ section.bl-scaleUp .submit-content{
 		margin-left: 2px;
 	}
 	
+}
+
+
+
+#homeMap {
+	margin: 0 auto;
+	height:100%;
+	width:50%;
+}
+
+#info_field {
+	background: #000;
 }
