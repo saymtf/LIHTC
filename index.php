@@ -12,6 +12,7 @@
 	 <!-- Import JS, CSS -->  
   	<script type="text/javascript" src="js/maps.js"></script>
   	<script type="text/javascript" src="js/score.js"></script>
+  	<script type="text/javascript" src="js/form.js"></script>
   	<script type="text/javascript" src="js/modernizr.custom.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   	<link rel="shortcut icon" href="images/favicon.ico" /> 
@@ -36,7 +37,7 @@
 					</div>
 		            <div class="bl-content">
 		            	<!-- Address Fields -->
-                        <div class="address_fields">
+                        <div class="address-fields">
 					        <h1 class="content-title">Enter Your Project Location(s) Below</h1>
 					        	<h5 id="project-instruction"><!--<span class="fa fa-info-circle fa-3x" id="info_field"></span>--> Click For Instructions</h5>
 					        	<div id="instructions">
@@ -46,7 +47,7 @@
                             	</div>
                             	<hr />
                             	<div id="address">
-                            		<input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" required />
+                            		<input type="text" id="address-text" placeholder="123 Embarcadero st, San Francisco, CA" />
                             		<br />
                             		<button id="show"><span>Add Address</span></button>
                             		<button id="hide"><span>Remove Address</span></button>
@@ -76,7 +77,7 @@
 					<div class="bl-content">
 						<h1 class="content-title">Fill In The Form To Find A Perfect Affordable Home</h1>
 						<hr />
-						<div id="home_fields">
+						<div id="home-fields">
 							<div id="home-input-fields-div">
 								<ul id="home-input-fields">
 									<li>
@@ -114,21 +115,23 @@
 						<div id="about-us-content">
 							
 							<p>
-							This Low Income Housing project was created by four CSUMB students: Alonso, Jose, Miranda, and Thane. 
+							This Low Income Housing project was created by four CSUMB students: Alonso Mendoza, Jose Diaz, Miranda Trayford, and Thane Fenton. 
 							</p>
 							
 							<p>
-							The LIHTC project was proposed by Eliza, whom is a employee at Thoughtworks wanting to provide contractors
-							to find a perfect location regarding a score depending on surrounding enviorments in the area. 
+							The LIHTC project was proposed by Eliza Childs, an employee at Thoughtworks, who wanted to provide contractors
+							with an easy solution to calculate the low income housing tax credit (LIHTC) score for a specified property to develop
+							low income housing for those who need them. This site allows you to compare up to four properties at once for both contractors
+							and homebuyers.
 							</p>
 						</div>
 						
 						<hr />
 						<div id="about-us-content">	<p><a id="about-thoughtworks" href="https://www.thoughtworks.com/about-us" target="_blank">Learn more about Thoughtworks</a></p> </div>
-						<h1 style="color:000;"><b>TESTING PAGES</b></h1>
+						<!--<h1 style="color:000;"><b>TESTING PAGES</b></h1>
 						<h3><a href="compare_one.php">Compare</a></h3>
 						<h3><a href="compare_two.php">Compare TWO</a></h3>
-						<h3><a href="compare_four.php">Compare Four</a></h3>
+						<h3><a href="compare_four.php">Compare Four</a></h3>-->
 						
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
@@ -139,21 +142,66 @@
 				<div class="bl-panel-items" id="bl-panel-work-items">
 					<div data-panel="panel-1">
 						<div>
-							<h3>Panel 1</h3>
-							<p id="address-name"></p>
 							
-							<div id="testing">
-								<span id="p11" style="font-size: 200%"></span><span id="p1"></span>
-								
-							</div>
+							<p id="address-name"></p>
+							<div class="viewHome"> 
+    							<div class="top">
+       								 <div class="house_left"><div id="mapPanel1"></div></div>
+       									 <div class="score_right">
+       									 	<h2 id="score" style="font-size: 400%; font-weight: 900; width:400%">LIHTC Score: </h2>
+       									 	<h4 id="addressPanel1" style="font-size: 250%; font-weight: 400; width:300%"></h4>
+       									 	 
+       									 </div>
+    							</div>
+    									
+   									 <div class="amenities">
+   									 	<span id="p1"></span>
+   									 	<p style="font-size: 250%; font-weight: 900">Closest Amenities:</p>
+      									 <p id="amen"><span id="p11" style="font-size: 130%"></span></p>
+   									 </div>
+  								  </div>
+							
     					</div>
     				</div>	
 					<div data-panel="panel-2">
 						<div>
-							<h3>Panel 2</h3>
-							<p>Iphone budslskame bushwick bespokefd THIS TEST NEEd to GET THE PARAMETERS THAT PASS OVER.</p>
 							<div id="testing">
-								<p id="p2"></p>
+								
+								
+								
+							<!--	<div id="mapPanel2"></div>-->
+								<div class="container">
+        
+        <div class="home1">
+                <div class="top">
+                    <div class="house_left"><div id="mapPanel2"></div></div>
+                    <div class="score_right">
+                        <h2>LIHTC Score</h2>
+                        <h4>Address: 321 sesame str.</h4>
+                        <p>HI</p>
+                    </div>
+                </div>
+                <div></div>
+                <div class="amenities"><p id="p2"></p></div>
+            </div>
+
+        <div class="home2">
+                <div class="top">
+                    <div class="house_left"><div id="mapPanel12"></div></div>
+                    <div class="score_right">
+                        <h2>lihtc SCORE</h2>
+                        <h4>Address: 1355 Market Str.</h4>
+                        <p>yo :)</p>
+                    </div>
+                </div>
+                <div></div>
+                <div class="amenities">
+					<p id ="p1p2"></p>
+                </div>
+            </div>
+            
+        </div>
+       
 								
 							</div>
 						</div>
@@ -182,6 +230,7 @@
 						<div>
 							<h3>PANEL 5 -- FINDING A HOME</h3>
 							<div id="homeMap"></div>
+							
 						</div>
 					</div>
 					<nav>
@@ -189,45 +238,72 @@
 					</nav>
 				</div>
 			<!-- EOF Panel items for project homes -->	
-				
 			</div>
 		</div><!-- container -->
 	
 	
+	    	
    	<script src="js/boxlayout.js"></script>
-   	<!-- Finding the Address & Adding new marker --> 
-   	
-   	<script>
-   		
-    	$("#submit-projects").click(function() {
+ 
+    <script>
+    	
+    </script>
+    
+	<script>
+		var arrayForMarkers = [];
+        var markers = [];
+    	var elements = [];
+		var panelTurn = 0;
+		var firstmarkers;
+		var secMark;
+		$(function() {	Boxlayout.init(); }); // Init the boxlayout
+		
+		// Functionality for the forms
+		$("#submit-projects").click(function() {
     		var $panelName = "panel-".concat(count);
 			$("li").data("panel", $panelName);
+			
 			test(window.arrayForMarkers, window.elements);
+			if(panelTurn > 1)
+            {
+            	console.log("Panel turn " + panelTurn);
+          		secMap(firstmarkers,secMark);
+            }
+
 		});
-    </script>
-    
-    <script>
-    	$(".bl-content-icon-close").click(function() {
-    		arrayForMarkers = [];
-    		markers = [];
-    		elements = [];
-    		count = 0;
-    	//	$("ol").empty();
-    		$("#address-text").empty();
-    		$("#map").css("display", "none");
-            $("#hide").css("display", "none");
-            $("#submit-projects").css("display", "none");
-    	});
-    </script>
-    
-    
-  	<script>
-        var arrayForMarkers = [];
-        var markers = [];
-    
-    	var elements = [];
+		
+	
+		
+		
+		$(document).ready(function() {
+			// User presses enter
+			$('#address-text').keypress(function(e){
+      			if(e.keyCode == 13) {
+      				$('#show').click();
+      			}
+    		});
+		
+			$('#project-instruction').on('click', displayInstructions); // user clicks instructions> project home
+			initForm();
+			$("#show").click(showItem);
+			$("#hide").click(removeItem);
+			$(".bl-content-icon-close").click(setToNull);
+			
+			/** Home Map **/
+			$("#submit-to-panel").click(function() {
+				var state = $("#state-field").val();
+				var city = $("#city-field").val();
+				var annual = $("#annual-field").val();
+			
+				findLocationByName(state, city); 
+				
+				
+			});	
+		});
+			
+		/* When user creates new address, map appears with this information obtained.. */
         $(document).ready(function(){
-        	$('#show').click(function() {
+        	$('#show').on('click', function() {
                 var address = $('#address-text').val();
                 if(address != "") {
         	        $.ajax({
@@ -235,103 +311,45 @@
 	                    url: "https://maps.googleapis.com/maps/api/geocode/json",
                 	    data: {address: address, key: "AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I"},
             	        success: function(data, status) {
-        	               /* alert(data['results'][0]['geometry']['location']['lat']); //LOCATION LAT*/
-    	                    lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
-	                        lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
+        	            /* alert(data['results'][0]['geometry']['location']['lat']); //LOCATION LAT*/
+    	                lat = data['results'][0]['geometry']['location']['lat']; // LATITUDE
+	                    lng = data['results'][0]['geometry']['location']['lng']; // LONGITUDE
                         
-                        	elements.push(document.getElementById('address-text'));
+                        elements.push(document.getElementById('address-text'));
                         	
-                    	    markers = {lat:lat, lng:lng, address:address, markerCount:count};
-                    	    arrayForMarkers.push(markers);
+                    	markers = {lat:lat, lng:lng, address:address, markerCount:count};
+                    	arrayForMarkers.push(markers);
                 	        
-            	            updateMap(lat, lng, count, address, arrayForMarkers);
-            	            
+            	        updateMap(lat, lng, count, address, arrayForMarkers);
+            	        // individualSearch(markers,document.getElementById('address-text'));
+            	        if(panelTurn == 0)
+            	        	firstmarkers = markers;
+            	        else
+            	        	secMark = markers;
+            	       
         	            },
     	                complete: function(data, status) {
 	                       /* alert(status); */ // DEBUG
+	                       $("#address-text").val("");
+	                        panelTurn++;
                     	}
             		});
+            		
                 }
            });
-           
-           
     	});
-    	</script>
-    	
-    	 
-		<script>
 		
-      
-			$(function() {
-				Boxlayout.init();
-			});
-			
-			
-			$('#project-instruction').on('click', function () {
-    			$('#instructions').toggle('slide');
-			});
-			
-		/* PUT IN EXTERNAL FILE */
-		    /*** This code adds and removes a form field ***/
-		    var count = 0;
-		    $(document).ready(function() {	
-		    	
-                /* Set the Three Other TextFields Hidden */
-                for(i = 1; i <= 4; i++) {
-                    var inputs = "#input".concat(i.toString());   
-                    $(inputs).hide();
-                }
-                $("#map").css("display", "none");
-                $("#hide").css("display", "none");
-                $("#submit-projects").css("display", "none");
-                
-                
-		        $("#show").click(function() {
-		        	if($('#address-text').val() != "") { 
-		            	if(count <= 4) {
-		                
-		                	var anInput = "input";
-		                	var address = $('#address-text').val();
-		                	count++;
-                        	anInput = anInput.concat(count.toString());
-                        	document.getElementById(anInput).innerHTML = address;
-                        	anInput = "#".concat(anInput); 
-		                	$(anInput).show();
-		                	$("#submit-projects").show();
-		                	$("#map").show();
-		                
-		            	}
-		            }
-		            
-		            // Hide/Show ElementId Button (Put as a function)
-		            if(count > 0) {  $("#hide").css("display", "inline"); }
-		            else { $("#hide").css("display", "none"); }
-		            if(count < 4) {  $("#show").css("display", "inline"); }
-		            else {   $("#show").css("display", "none"); }
-		        });
-		
-				$("#hide").click(function() {
-		            if(count >= 1) {
-		               $("#show").css("display", "inline");
-		               var anInput = "#input";
-                        anInput = anInput.concat(count.toString());
-                        $(anInput).hide();
-		                count--;
-		               arrayForMarkers.pop()
-		                //updateMap(arrayForMarkers[count]['lat'], arrayForMarkers[count]['lat'], count, arrayForMarkers[count]['address']); // if user removed - remove marker
-		            }
-		            
-		            // Hide/Show ElementId Button (Put as a function)
-		            if(count > 0) {  $("#hide").css("display", "inline"); }
-		            else { $("#hide").css("display", "none");  $("#submit-projects").hide(); $("#map").hide(); }
-		            if(count < 4) {  $("#show").css("display", "inline"); }
-		            else {   $("#show").css("display", "none"); }
-		        });
-            });
-    	
-		
-		</script>
+		$.get( "php/zillow.php",
+			function(data, status) {
+				// Return Zillow Data from zillow.php
+			/* alert(data[2]); */
+			// GRAbbing every individual char rather than a string
+		});
 	
+	
+		</script>
+		
+		
 	</body>
 	
 

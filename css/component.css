@@ -220,19 +220,19 @@ div.bl-panel-items > div > div {
 	text-align: center;
 }
 
-.address_fields {
+.address-fields {
 	margin-top: 12px;
 }
 
-.address_fields h1 {
+.address-fields h1 {
 	margin: 0;
 }
 
-.address_fields li{
+.address-fields li{
 	padding: 8px 8px 8px 0;
 }
 
-.address_fields ol{
+.address-fields ol{
 	padding: 16px 0 4px 0;
 }
 
@@ -255,7 +255,7 @@ div.bl-panel-items > div > div {
 }
 
 
-.address_fields input[type=text] {
+input[type=text] {
 	width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -270,6 +270,8 @@ input[type=text]:focus {
 	border: 3px solid #555;
 }
 
+
+
 .break {
 	clear:both;
 }
@@ -279,7 +281,7 @@ input[type=text]:focus {
 	padding-left:128px;
 }
 
-#home_fields {
+#home-fields {
 	margin: auto;
 	width:50%;
 }
@@ -704,7 +706,7 @@ section.bl-scaleUp .submit-content{
 		display: none;
 	}
 	
-	.address_fields {
+	.address-fields {
 		display: inline-block;
 		margin-top: 12px;
 		margin-left: 2px;
@@ -720,6 +722,24 @@ section.bl-scaleUp .submit-content{
 	width:50%;
 }
 
-#info_field {
+#info-field {
 	background: #000;
+}
+
+#mapPanel1
+{
+	width: 300px;
+    height: 300px;
+}
+
+#mapPanel12
+{
+	width: 300px;
+    height: 300px;
+}
+
+#mapPanel2
+{
+	width: 300px;
+    height: 300px;
 }

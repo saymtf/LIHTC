@@ -19,7 +19,10 @@ $amenities = $_POST['amenities'];
     <div class="viewHome"> 
     <div class="top">
         <div class="house_left"><img src="images/house-lady.jpg" alt="house" style="height: 250px; width: 250px;"/></div>
-        <div class="score_right"><h2 id="score"></h2><h4 id="address"></h4></div>
+        <div class="score_right">
+            <h2 id="score">230</h2>
+            <h4 id="address">123 bruce</h4>
+        </div>
     </div>
     <div></div>
     <div class="amenities">

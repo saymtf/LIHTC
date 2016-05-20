@@ -16,66 +16,69 @@
         padding: 0;
       }
       #map {
-        height: 100% !important;
-        width: 100% !important;
+        height: 50%;
+        width: 50%;
       }
     </style>
   </head>
   <body>
     
-    <p id="val">THIS IS P</p>
-    <div id="homeMap"></div>
+    <div id="map"></div>
+    <button type="button" id="test" onclick="map.setZoom(5)">TEST</button>
     
-    	<!-- FIND WHERE TO MOVE THIS -->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=initMap" async defer></script>
-  	  
-    <script>
-   // function initMap() {
-  //    map = new google.maps.Map(document.getElementById('map'), { center: {lat: -34.397, lng: 150.644}, zoom: 8});
-   // }
+    <!-- FIND WHERE TO MOVE THIS
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjs93ZAV_p2ZjMeFnefULIlEH0I8JDi3I&libraries=places&callback=doTheMap" async defer></script>
+      -->
       
-      //Documentation : api.trulia.com/webservices.php?library=LocationInfo&function=getCitiesInState&state=CA&apikey=99nb6vyprzu2w4np2ywg25r7
-     /*
-      $.ajax({
-         type: "GET",
-         contentType: "application/xml",
-         dataType: "xml",
-         crossDomain: "true",
-         url: "http://api.trulia.com/webservices.php",
-         data: 
-          {
-            "library": "LocationInfo", 
-            "function": "getCitiesInState",
-            "state": "CA",
-            "apikey": "99nb6vyprzu2w4np2ywg25r7"
-          },
-         compelete(data, status) {
-           alert(status);
-         }, success(data, status) {
-           alert(status);
-         }
-       });
-    
-    /*var dataString = "library=LocationInfo&function=getCitiesInState&state=CA&apikey=99nb6vyprzu2w4np2ywg25r7";
-    
-    $.ajax({
-      type: "GET",
-      dataType: "xml",
-      crossDomain: "true",
-      url: "http://api.trulia.com/webservices.php",
-      cache: false,
-      data: dataString,
+   <script>
+   function initialize() {
+    var locations = [
+        ['DESCRIPTION', 71.7069, 42.6043, 3],
+        ['DESCRIPTION', 41.914873, 12.506486, 2],
+        ['DESCRIPTION', 61.918574, 12.507201, 1]
+    ];
 
-      success: function(html){
-        //$("#more").after(html);
-        alert("Success!");
-      }
+    window.map = new google.maps.Map(document.getElementById('map'), {
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    
-    $.getJSON('http://api.trulia.com/webservices.php?' + dataString, function(json_data){
-      alert(JSON.stringify(json_data));
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var bounds = new google.maps.LatLngBounds();
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+
+        bounds.extend(marker.position);
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
+
+    map.fitBounds(bounds);
+
+    var listener = google.maps.event.addListener(map, "idle", function () {
+        map.setZoom(3);
+        google.maps.event.removeListener(listener);
     });
-      */
-    </script>
+}
+
+function loadScript() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+    document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+   </script>
+   
     </body>
 </html>

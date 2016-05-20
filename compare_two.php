@@ -14,7 +14,7 @@
 
 <body>
     <div class="container">
-        <form action="compare_one.php" method="post">
+        
         <div class="home1">
            <button name="submit_home" id="submit_home" type="submit" class="viewHome">
      
@@ -35,9 +35,11 @@
                     <p> Closest Store : x mi. Closest Hospital: y mi. . . .</p>
                     <input type="hidden" value="Closest Store : x mi. Closest Hospital: y mi. . . ." name="amenities" />
                 </div>
+                </button>
             </div>
-            </button>
-        </div>
+            
+           
+       
         
         <div class="home2">
             <button name="submit_home" id="submit_home" type="submit" class="viewHome">
@@ -61,10 +63,11 @@
                     <p> CLOSEST Store : x mi. Closest Hospital: y mi. . . .</p>
                      <input type="hidden" value="CLOSEST Store : x mi. Closest Hospital: y mi. . . ." name="amenities" />
                 </div>
+                </button>
             </div>
-            </button>
+            
         </div>
-        </form>
+       
     </div>
 </body>
 
